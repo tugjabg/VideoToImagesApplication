@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F2EC"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:gravity="center"
+        android:background="#F8F7F5"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="200dp">
+        <TextView
+            android:text="Video To Images"
+            android:textSize="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:maxWidth="250sp"
+            android:textAlignment="center"
+            android:text="Snap particular &amp; perfect moment from video using video to photo converter"
+            android:textSize="12sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <Button
+        android:id="@+id/startBtn"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:text="Start"
+        android:layout_width="300dp"
+        android:backgroundTint="#F45677"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/mySnapsBtn"
+        android:layout_gravity="center"
+        android:text="My Snaps"
+        android:layout_width="300dp"
+        android:backgroundTint="#F45677"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

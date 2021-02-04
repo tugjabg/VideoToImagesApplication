@@ -1,0 +1,2 @@
+1. Phát video dùng VideoView
+2. Muốn scale chiều ngang, dọc của video phải dùng constrainlayout

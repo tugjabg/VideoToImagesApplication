@@ -6,42 +6,156 @@
     android:layout_height="match_parent"
     android:background="#F7F2EC"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
+   <TextView
+       android:paddingBottom="25dp"
+       android:paddingTop="25dp"
+       android:layout_gravity="center"
+       android:text="Video To Photo"
+       android:textSize="30sp"
+       android:textColor="#000"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000"/>
     <LinearLayout
-        android:gravity="center"
-        android:background="#F8F7F5"
-        android:layout_gravity="center"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp"
-        android:layout_width="350dp"
-        android:layout_height="200dp">
-        <TextView
-            android:text="Video To Images"
-            android:textSize="30sp"
+        android:id="@+id/select"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/select"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
         <TextView
-            android:maxWidth="250sp"
-            android:textAlignment="center"
-            android:text="Snap particular &amp; perfect moment from video using video to photo converter"
-            android:textSize="12sp"
+            android:layout_marginLeft="20dp"
+            android:textSize="25sp"
+            android:layout_marginTop="17dp"
+            android:text="Select Video"
+            android:textColor="#000"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-    <Button
-        android:id="@+id/startBtn"
-        android:layout_marginTop="100dp"
-        android:layout_gravity="center"
-        android:text="Start"
-        android:layout_width="300dp"
-        android:backgroundTint="#F45677"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/mySnapsBtn"
-        android:layout_gravity="center"
-        android:text="My Snaps"
-        android:layout_width="300dp"
-        android:backgroundTint="#F45677"
-        android:layout_height="wrap_content"/>
+    <LinearLayout
+        android:id="@+id/gallery"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/gallery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="17dp"
+            android:text="Gallery"
+            android:layout_marginLeft="20dp"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/show"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="17dp"
+            android:text="SlideShow maker"
+            android:layout_marginLeft="20dp"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/settings"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginTop="17dp"
+            android:text="Settings"
+            android:layout_marginLeft="20dp"
+            android:textSize="25sp"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <View
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_marginLeft="50dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:src="@drawable/share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Share"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginLeft="50dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:paddingLeft="10dp"
+                android:src="@drawable/rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="Rate us"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginLeft="50dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:paddingLeft="10dp"
+                android:src="@drawable/about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="About us"
+                android:textSize="25sp"
+                android:textColor="#000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
 
+
+    </LinearLayout>
 </LinearLayout>

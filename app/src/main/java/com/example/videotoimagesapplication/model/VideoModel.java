@@ -1,5 +1,6 @@
 package com.example.videotoimagesapplication.model;
 
+import android.graphics.Bitmap;
 import android.net.Uri;
 
 import java.io.Serializable;
@@ -8,6 +9,7 @@ public class VideoModel  implements Serializable {
     String videoTitle;
     String videoDuration;
     Uri videoUri;
+    Bitmap img;
     
     public String getVideoTitle() {
         return videoTitle;
@@ -31,6 +33,14 @@ public class VideoModel  implements Serializable {
 
     public void setVideoUri(Uri videoUri) {
         this.videoUri = videoUri;
+    }
+
+    public Bitmap getImg() {
+        return img;
+    }
+
+    public void setImg(Bitmap img) {
+        this.img = img;
     }
 
     @Override

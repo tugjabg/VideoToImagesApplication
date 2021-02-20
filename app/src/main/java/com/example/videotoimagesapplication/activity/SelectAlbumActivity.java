@@ -25,6 +25,9 @@ import com.example.videotoimagesapplication.adapter.VideoAdapter;
 import com.example.videotoimagesapplication.model.VideoModel;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+
+import wseemann.media.FFmpegMediaMetadataRetriever;
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -53,7 +56,6 @@ public class SelectAlbumActivity extends AppCompatActivity {
     public void getVideos() {
         ContentResolver contentResolver = getContentResolver();
         Uri uri = MediaStore.Video.Media.EXTERNAL_CONTENT_URI;
-
         Cursor cursor = contentResolver.query(uri, null, null, null, null);
 
         if (cursor != null && cursor.moveToFirst()) {
@@ -61,10 +63,13 @@ public class SelectAlbumActivity extends AppCompatActivity {
                 String title = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.TITLE));
                 String duration = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DURATION));
                 String data = cursor.getString(cursor.getColumnIndex(MediaStore.Video.Media.DATA));
+                FFmpegMediaMetadataRetriever myMediaMetadataRetriever = new FFmpegMediaMetadataRetriever();
+                myMediaMetadataRetriever.setDataSource(data, new HashMap<String, String>());
                 VideoModel  videoModel  = new VideoModel ();
                 videoModel.setVideoTitle(title);
                 videoModel.setVideoUri(Uri.parse(data));
                 videoModel.setVideoDuration(timeConversion(Long.parseLong(duration)));
+                videoModel.setImg(myMediaMetadataRetriever.getFrameAtTime(1));
                 videoArrayList.add(videoModel);
             } while (cursor.moveToNext());
         }
@@ -87,48 +92,7 @@ public class SelectAlbumActivity extends AppCompatActivity {
         }
         return videoTime;
     }
-//
-//
-//    @Override
-//    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        MediaController mediaController= new MediaController(this);
-//        mediaController.setAnchorView(videoView);
-//        if (resultCode != RESULT_OK) return;
-//
-//        if (requestCode == PICK_FROM_GALLERY) {
-//            Uri mVideoURI = data.getData();
-//            videoView.setVideoURI(mVideoURI);
-//            videoView.setMediaController(mediaController);
-//            mediaController.setAnchorView(videoView);
-//        }
-//    }
-//
-//    private static Bitmap screenShot(ViewGroup view){
-//        View scr = view;
-//        scr.setDrawingCacheEnabled(true);
-//        Bitmap bitmap = Bitmap.createBitmap(scr.getDrawingCache());
-//        scr.setDrawingCacheEnabled(false);
-//        return bitmap;
-//    }
-//
-//    public void store(Bitmap bitmap){
-//        String dir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/"
-//                + Environment.DIRECTORY_DOWNLOADS + "/" + System.currentTimeMillis() + ".png";
-//        File file = new File(dir);
-//        if (file.exists()){
-//            file.delete();
-//        }
-//        try {
-//            FileOutputStream fileOutputStream = new FileOutputStream(file);
-//            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream);
-//            Log.d("Log", dir);
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+
     private static final int PERMISSION_REQUEST_CODE = 200;
     private boolean checkPermission() {
 

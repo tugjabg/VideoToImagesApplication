@@ -7,15 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".activity.PlayVideoActivity">
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="650dp">
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="450dp">
         <VideoView
+            android:layout_gravity="center"
             android:id="@+id/videoView"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"/>
     </FrameLayout>
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPagerPlayVideo"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"/>
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/viewPagerPlayVideo"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"/>-->
 </LinearLayout>
